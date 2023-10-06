@@ -10,18 +10,19 @@
 
 int main(void)
 {
-	int i = 0;
+	int i;
 
-	while (i<=9);
-       
+	i = 48;
+
+	while (i < 58)
 	{
-	putchar(i);
-        if (i != 9)
+		putchar(i);
+		if (i != 57)
 		{
-		putchar(',');
-		putchar(' ');
-        	}
-	i++;
+			putchar(44);
+			putchar(32);
+		}
+		i++;
 	}
 
 	putchar(10);
