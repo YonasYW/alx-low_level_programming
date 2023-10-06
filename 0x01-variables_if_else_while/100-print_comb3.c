@@ -18,7 +18,7 @@ int main(void)
 	while (i < 9)
 	{
 	while (j <= 9)
-	{ 
+	{
 	putchar(i + '0');
 	putchar(j + '0');
 
@@ -37,5 +37,5 @@ int main(void)
 
 	putchar('\n');
 
-	return 0;
+	return (0);
 }
