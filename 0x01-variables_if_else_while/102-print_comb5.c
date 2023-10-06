@@ -15,7 +15,7 @@ int i, j;
 	i = 0;
 	while (i < 100)
 		{
-		j = i+1;
+		j = i + 1;
 		while (j < 100)
 			{
 				putchar(i / 10 + '0');
