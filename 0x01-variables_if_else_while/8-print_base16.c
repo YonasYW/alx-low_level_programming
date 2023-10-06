@@ -14,9 +14,10 @@ int i = 0;
 
 	while (i < 16)
 	{
-		if (i < 10) {
+		if (i < 10)
 	putchar('0' + i);
-	} else {
+
+	       	else {
 		putchar('a' + i - 10);
     }
 	i++;
