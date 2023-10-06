@@ -14,28 +14,28 @@ int i, j;
 
 	i = 0;
 	while (i < 100)
-	{
-	j = i;
-	while (j < 100)
 		{
-		putchar(i / 10 + '0');
-		putchar(i % 10 + '0');
-
-		putchar(' ');
-
-		putchar(j / 10 + '0');
-		putchar(j % 10 + '0');
-
-		if (i != 99 || j != 99)
+		j = i+1;
+		while (j < 100)
 			{
-			putchar(',');
-			putchar(' ');
-			}
+				putchar(i / 10 + '0');
+				putchar(i % 10 + '0');
 
-		j++;
+				putchar(' ');
+
+				putchar(j / 10 + '0');
+				putchar(j % 10 + '0');
+
+				if (i != 99 || j != 99)
+					{
+						putchar(',');
+						putchar(' ');
+					}
+
+			j++;
+			}
+		i++;
 		}
-	i++;
-	}
 
 	putchar('\n');
 
