@@ -13,6 +13,7 @@
 int main(void)
 {
 	const char *message = "_putchar\n";
+
 	write(1, message, sizeof("_putchar\n") - 1);
 
 	return (0);
