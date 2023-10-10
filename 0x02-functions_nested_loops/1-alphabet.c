@@ -7,7 +7,6 @@
  */
 
 void print_alphabet(void)
-	_putchar(letter);
 {
 	char letter = 'a';
 
@@ -16,6 +15,5 @@ void print_alphabet(void)
 		_putchar(letter);
 		letter++;
 	}
-
 	_putchar('\n');
 }
