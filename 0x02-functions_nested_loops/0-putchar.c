@@ -8,9 +8,9 @@
  * On error, -1 is returned, and errno is set appropriately.
  */
 
-int main()
+int main(void)
 {
-	const char* message = "_putchar\n";
-	write(1, message, sizeof("_putchar\n") - 1);
+	const char *message = "_putchar\n";
+	write(1, message, sizeof ("_putchar\n") - 1);
 	return (0);
 }
