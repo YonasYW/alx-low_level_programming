@@ -1,32 +1,53 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
+#include <string.h>
 
 /**
- * f4 - finds the biggest number
+ * main - Generates and prints passwords for the crackme5 executable.
+ * @argc: The number of arguments supplied to the program.
+ * @argv: An array of pointers to the arguments.
  *
- * @usrn: username
- * @len: length of username
- * Return: the biggest number
+ * Return: Always 0.
  */
-int f4(char *usrn, int len)
+int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-	int ch;
-	int vch;
-	unsigned int rand_num;
+	char password[7], *codex;
+	int len = strlen(argv[1]), i, tmp;
 
-	ch = *usrn;
-	vch = 0;
+	codex = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
 
-	while (vch < len)
+	tmp = (len ^ 59) & 63;
+	password[0] = codex[tmp];
+
+	tmp = 0;
+	for (i = 0; i < len; i++)
+		tmp += argv[1][i];
+	password[1] = codex[(tmp ^ 79) & 63];
+
+	tmp = 1;
+	for (i = 0; i < len; i++)
+		tmp *= argv[1][i];
+	password[2] = codex[(tmp ^ 85) & 63];
+
+	tmp = 0;
+	for (i = 0; i < len; i++)
 	{
-		if (ch < usrn[vch])
-			ch = usrn[vch];
-		vch += 1;
+		if (argv[1][i] > tmp)
+			tmp = argv[1][i];
 	}
+	srand(tmp ^ 14);
+	password[3] = codex[rand() & 63];
 
-	srand(ch ^ 14);
-	rand_num = rand();
+	tmp = 0;
+	for (i = 0; i < len; i++)
+		tmp += (argv[1][i] * argv[1][i]);
+	password[4] = codex[(tmp ^ 239) & 63];
 
-	return (rand_num & 63);
+	for (i = 0; i < argv[1][0]; i++)
+		tmp = rand();
+	password[5] = codex[(tmp ^ 229) & 63];
+
+	password[6] = '\0';
+	printf("%s", password);
+	return (0);
 }
